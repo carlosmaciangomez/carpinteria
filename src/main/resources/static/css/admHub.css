@@ -1,0 +1,81 @@
+nav {
+    padding: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 33px;
+    position: relative;
+}
+
+nav h1 {
+    flex: 1;
+    text-align: center;
+    margin: 0;
+}
+
+.logout-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff4d4d;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    right: 26px;
+}
+
+.logout-button:hover {
+    background-color: #f96b6b;
+    transform: scale(1.03);
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    width: 90%;
+    max-width: 800px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.button img {
+    width: 80px;
+    height: 80px;
+    margin-right: 30px;
+}
+
+.button-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.button h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.button p {
+    margin: 10px 0 0;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.button:hover {
+    background-color: #f0f0f0;
+    border-color: #888;
+}

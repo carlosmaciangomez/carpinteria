@@ -1,0 +1,75 @@
+main {
+    height: 80vh;
+}
+
+.resena {
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 40px auto 20px;
+}
+
+.resena #fotosResena {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.resena #fotosResena #mainFoto {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.resena #fotosResena #thumbnailContainer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.resena #fotosResena .thumbnail {
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 5px;
+}
+
+.resena #fotosResena .thumbnail:hover {
+    border-color: #000;
+}
+
+.resena .resena-info {
+    flex: 1;
+    padding: 20px;
+}
+
+.resena .resena-info h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.resena .resena-info p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+
+.stars-container {
+    display: flex;
+    align-items: center;
+}
+
+.star {
+    font-size: 2em;
+    color: #8f8f8f;
+    margin-right: 5px;
+}
+
+.star.active {
+    color: #f5b301;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/general.css">
+    <link rel="stylesheet" href="./css/registro.css">
+    <link rel="icon" href="./img/iconoTransparente.png" type="image/x-icon">
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./js/app.js"></script>-->
+    <title>Registro</title>
+</head>
+
+<body>
+    <header>
+        <img src="./img/fondoHeader.jpg" alt="MainPic">
+        <h1>Macián Carpintería</h1>
+        <h3>Desde 1980</h3>
+    </header>
+
+    <main>
+        <form action="/api/usuarios/usuario" method="post" enctype="multipart/form-data">
+            <h2>Crear cuenta</h2>
+
+            <div>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required/>
+            </div>
+
+            <div>
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos" name="apellidos" required/>
+            </div>
+
+            <div>
+                <label for="correo">Correo:</label>
+                <input type="email" id="correo" name="correo" required/>
+            </div>
+
+            <div>
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena" required/>
+            </div>
+
+            <div>
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9}" required/>
+            </div>
+
+            <!--
+            <div>
+                <h4 class="form-label" for="imagen">Subir Imagen (opcional)</h4>
+                <input type="file" id="imagen" name="imagen" class="form-control"/>
+            </div>
+
+            <div>
+                <img id="imgfile" width="100" height="100">
+            </div>
+            -->
+
+            <div>
+                <button type="submit">Registrar</button>
+            </div>
+            <p>¿Ya tienes cuenta? <a href="./login.html">Inicia sesión aquí</a></p>
+        </form>
+        
+    </main>
+
+    <footer>
+        <section>
+            <h3>Contacte con nosotros</h3>
+            <article>
+                <a href="tel:+34123456789">
+                    <img src="./img/iconoTelefono.png" alt="ImgTel" title="Llámenos">
+                    <p>+34 123456789</p>
+                </a>
+            </article>
+            <article>
+                <a href="https://www.facebook.com/carpinteria.antoniomacian" target="_blank">
+                    <img src="./img/iconoFacebook.png" alt="ImgFacebook" title="Nuestro Facebook">
+                    <p>@Antonio Macián Pavía</p>
+                </a>
+            </article>
+            <article>
+                <a href="mailto:amaciansl@hotmail.com" target="_blank">
+                    <img src="./img/iconoOutlook.png" alt="ImgEmail" title="Escríbanos un correo">
+                    <p>amaciansl@hotmail.com</p>
+                </a>
+            </article>
+        </section>
+        <hr>
+        <div>
+            <p>© 2024 Macián Carpintería.</p>
+            <p>Todos los derechos reservados.</p>
+            <p>Macián Carpintería es una empresa registrada en España.</p>
+        </div>
+    </footer>
+    <!--<script src="./js/imgChange.js"></script>-->
+</body>
+
+</html>

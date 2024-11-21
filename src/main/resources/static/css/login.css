@@ -1,0 +1,42 @@
+main {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #E7E7E7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 9px;
+}
+form div {
+    margin-bottom: 15px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+main form div input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+main form h2 {
+    font-size: 33px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+button:hover {
+    background-color: #555;
+    transform: scale(1.1);
+}
+
+footer {
+    bottom: 0;
+}

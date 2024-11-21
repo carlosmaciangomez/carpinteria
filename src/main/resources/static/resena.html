@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/resena.css">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
+    <link rel="icon" href="./img/iconoTransparente.png" type="image/x-icon">
+    <title>Reseña</title>
+</head>
+
+<body>
+    <header>
+        <img src="./img/fondoHeader.jpg" alt="MainPic">
+        <h1>Macián Carpintería</h1>
+        <h3>Desde 1980</h3>
+    </header>
+
+    <nav>
+        <a href="./resenas.html">Reseñas</a>
+        <a href="./mensaje.html">Envíanos un mensaje</a>
+        <a href="./index.html">Nuestros productos</a>
+        <a href="./presupuesto.html">Crea tu presupuesto</a>
+        <a href="./index.html">Pide tu cita previa</a>
+        <a href="/perfil.html">
+            <img src="./img/user-interface.png" alt="LogoPerfil" title="Mi perfil">
+            <span id="nombreUsuarioNav"></span>
+        </a>
+        <a id="logoutB" class="logout-button">Cerrar sesión</a>
+    </nav>
+
+    <main>
+        <section class="resena">
+            <div id="fotosResena">
+                <div id="thumbnailContainer">
+                </div>
+            </div>
+            <div class="resena-info">
+                <h2 id="titulo"></h2>
+                <p id="val"></p>
+                <p id="fecha"></p>
+                <p id="desc"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <section>
+            <h3>Contacte con nosotros</h3>
+            <article>
+                <a href="tel:+34123456789">
+                    <img src="./img/iconoTelefono.png" alt="ImgTel" title="Llámenos">
+                    <p>+34 123456789</p>
+                </a>
+            </article>
+            <article>
+                <a href="https://www.facebook.com/carpinteria.antoniomacian" target="_blank">
+                    <img src="./img/iconoFacebook.png" alt="ImgFacebook" title="Nuestro Facebook">
+                    <p>@Antonio Macián Pavía</p>
+                </a>
+            </article>
+            <article>
+                <a href="mailto:amaciansl@hotmail.com" target="_blank">
+                    <img src="./img/iconoOutlook.png" alt="ImgEmail" title="Escríbanos un correo">
+                    <p>amaciansl@hotmail.com</p>
+                </a>
+            </article>
+        </section>
+        <hr>
+        <div>
+            <p>© 2024 Macián Carpintería.</p>
+            <p>Todos los derechos reservados.</p>
+            <p>Macián Carpintería es una empresa registrada en España.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+    <script src="./js/cargarResena.js"></script>
+    <script src="./js/logout.js"></script>
+    <script src="./js/cookies2.js"></script>
+</body>
+
+</html>

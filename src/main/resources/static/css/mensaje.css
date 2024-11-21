@@ -1,0 +1,79 @@
+main {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #E7E7E7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 9px;
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+main form div input, main form div textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+#textoMensaje {
+    width: 100%;
+    height: 150px;
+    box-sizing: border-box;
+    resize: vertical;
+    vertical-align: top;
+    line-height: 1.5;
+    font-family: "Lexend", sans-serif;
+}
+
+main form h2 {
+    font-size: 33px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+
+button {
+    background-color: #714b31;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+button:hover {
+    background-color: #8b5a3a;
+    transform: scale(1.1);
+}
+
+button:disabled,
+button.disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    opacity: 0.6;
+    transform: none;
+}
+
+button:disabled:hover,
+button.disabled:hover {
+    background-color: #ccc;
+    transform: none;
+}
+
+
+footer {
+    bottom: 0;
+}

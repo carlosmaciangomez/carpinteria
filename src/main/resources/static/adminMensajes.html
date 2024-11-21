@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/general.css">
+    <link rel="stylesheet" href="./css/adminMensajes.css">
+    <link rel="icon" href="./img/iconoTransparente.png" type="image/x-icon">
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>-->
+    <title>Administración mensajes</title>
+</head>
+
+<body>
+    <nav>
+        <h1>Zona de administración</h1>
+        <div class="nav-buttons">
+            <a id="logoutB" class="logout-button">Cerrar sesión</a>
+            <button id="goBack">Volver atrás</button>
+        </div>
+    </nav>
+    <main>
+        <h2>Mensajes</h2>
+        <table id="mensajesTable">
+            <thead>
+                <tr>
+                    <th>ID Mensaje</th>
+                    <th>Autor</th>
+                    <th>Asunto</th>
+                    <th>Mensaje</th>
+                    <th>Email de contacto</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    </main>
+    <script src="./js/showMensajes.js"></script>
+    <script src="./js/logout.js"></script>
+    <script src="./js/volverAdmin.js"></script>
+</body>
+
+</html>

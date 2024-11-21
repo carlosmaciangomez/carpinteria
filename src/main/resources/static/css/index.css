@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    object-fit: cover;
+    font-family: "Lexend", sans-serif;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+    padding: 50px;
+    height: fit-content;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+main div {
+    width: 49%;
+    padding: 36px;
+    height: 300px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+main > article > div:nth-of-type(1) {
+    animation-delay: 0.2s;
+}
+
+main > article > div:nth-of-type(2) {
+    animation-delay: 0.4s;
+}
+
+main > article > div:nth-of-type(3) {
+    animation-delay: 0.6s;
+}
+
+#nuevoDiv {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 0.8s;
+}
+
+main > article {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex: 1;
+    padding: 50px;
+    height: fit-content;
+}
+
+main > article > div {
+    transition: transform 0.3s ease;
+}
+
+main > article > div:hover {
+    transform: scale(1.03);
+}
+
+main > article > div p {
+    text-align: justify;
+}
+
+main > article > div:first-of-type {
+    background-color: #e7e7e7e0;
+    border-radius: 15px;
+}
+
+main > article > div:nth-of-type(2), main > article > div:nth-of-type(3) {
+    background-color: #E7E7E7;
+    border-color: black;
+    border-style: solid;
+    border-width: 4px;
+    border-radius: 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#noRegistro h3, #bienvenida h3 {
+    margin-bottom: 20px;
+    font-size: 27px;
+    text-align: center;
+}
+
+main > article > div:nth-of-type(2) button {
+    width: 190px;
+    min-height: 62px;
+    font-size: 21px;
+    font-weight: bold;
+    padding: 18px;
+    border: none;
+    border-radius: 2px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+main > article > div:nth-of-type(2) button:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+main > article > div:nth-of-type(2) article a:first-of-type button {
+    background-color: #805337b3;
+}
+
+main > article > div:nth-of-type(2) article a:first-of-type button:hover {
+    background-color: #a06b4db3;
+}
+
+main > article > div:nth-of-type(2) article a:last-of-type button {
+    background-color: #714b31;
+}
+
+main > article > div:nth-of-type(2) article a:last-of-type button:hover {
+    background-color: #8b5a3a;
+}
+
+main > article > div:nth-of-type(2) article {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+#bienvenida {
+    overflow: hidden;
+    height: auto;
+    padding: 36px;
+    box-sizing: border-box;
+}
+
+#bienvenida > article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+}
+
+#bienvenida > article > a {
+    text-decoration: none;
+}
+
+#bienvenida > article > a > button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 100%;
+}
+
+#bienvenida > article > a > button:hover {
+    background-color: #e6e6e6;
+    transform: scale(1.02);
+}
+
+#bienvenida > article > a > button img {
+    margin-right: 8px;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+#nuevoDiv {
+    display: flex;
+    width: 77%;
+    margin: 50px 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+#nuevoDiv:hover {
+    transform: scale(1.02);
+}
+
+#nuevoDiv img {
+    width: 40%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#nuevoDiv .texto {
+    width: 60%;
+    padding-left: 20px;
+    transition: none;
+}
