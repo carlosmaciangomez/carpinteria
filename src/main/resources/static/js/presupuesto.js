@@ -1,4 +1,4 @@
-/*
+
 document.getElementById("generatePdf").addEventListener("click", async () => {
     try {
         // Obtener datos del formulario
@@ -47,8 +47,8 @@ document.getElementById("generatePdf").addEventListener("click", async () => {
         console.error("Error:", err.message);
     }
 });
-*/
 
+/*
 document.addEventListener('DOMContentLoaded', () => {
     const addMuebleButton = document.getElementById('addMueble');
     const addSueloButton = document.getElementById('addSuelo');
@@ -103,3 +103,4 @@ document.addEventListener('DOMContentLoaded', () => {
         alert('Generar el PDF');
     });
 });
+*/
