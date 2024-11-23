@@ -1,0 +1,41 @@
+main {
+    padding: 25px;
+}
+
+main > div:first-of-type {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 25px;
+}
+
+#productos {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-x: auto;
+}
+
+.producto {
+    width: 300px;
+    height: 300px;
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    margin-right: 11px;
+    margin-bottom: 10px;
+}
+
+.producto img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    flex-grow: 1;
+}
+
+.producto p {
+    margin: 0;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
