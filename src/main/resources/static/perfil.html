@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/general.css">
-    <link rel="stylesheet" href="/css/perfil.css">
+    <link rel="stylesheet" href="./css/perfil.css">
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
     <link rel="icon" href="./img/iconoTransparente.png" type="image/x-icon">
     <title>Mi perfil</title>
@@ -35,9 +35,39 @@
     </nav>
 
     <main>
-        <div>
-
-        </div>
+        <section id="mainMenu">
+            <article>
+                <h1>Bienvenido/a <span id="nombreUsuarioNav"></span></h1>
+                <button id="editProfile">Editar perfil</button>
+            </article>
+            <article>
+                <h3>Mis mensajes</h3>
+                <div>
+                    <p>Fecha: 12/05/2024</p>
+                    <p>Asunto: Cita previa</p>
+                    <p>Mensaje: Hola, me gustaría pedir una cita previa para el día 15 de mayo a las 10:00. Gracias.</p>
+                </div>
+                <div>
+                    <p>Fecha: 10/05/2024</p>
+                    <p>Asunto: Presupuesto</p>
+                    <p>Mensaje: Buenos días, me gustaría solicitar un presupuesto para una mesa de comedor de 2 metros de largo. Gracias.</p>
+            </article>
+            <article>
+                <h3>Mis reseñas</h3>
+                <a href="resena.html" class="button">
+                    <img src="./img/resenas.png" alt="Usuarios">
+                    <div class="button-text">
+                        <h2 id="titulo">titulo</h2>
+                        <p id="val">valoracion</p>
+                        <p id="fecha">fecha</p>
+                    </div>
+                </a>
+            </article>
+        </section>
+        
+        
+        
+        
         <div id="editUser">
             <form>
                 <h2>Editar perfil</h2>
@@ -92,7 +122,7 @@
                 
                 <div>
                     <button type="submit">Guardar cambios</button>
-                    <button type="button">Cancelar edición</button>
+                    <button type="button" id="cancelEdit">Cancelar edición</button>
                 </div>
             </form>
         </div>

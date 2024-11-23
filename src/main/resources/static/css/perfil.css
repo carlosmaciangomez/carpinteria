@@ -3,6 +3,10 @@ main {
     margin: 60px auto 0 auto;
 }
 
+#editUser {
+    display: none;
+}
+
 #editUser > form {
     display: grid;
     grid-template-columns: repeat(3, 2fr);

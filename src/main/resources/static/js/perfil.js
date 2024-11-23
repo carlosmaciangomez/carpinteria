@@ -1,6 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     const nombreUsuario = sessionStorage.getItem('nombreUsuario');
     const correoUsuario = sessionStorage.getItem('correoUsuario');
+    const editButton = document.getElementById('editProfile');
+    const editUser = document.getElementById('editUser');
+    const cancelEdit = document.getElementById('cancelEdit');
+    const mainMenu = document.getElementById('mainMenu');
 
     //Valida si está iniciado sesión y sino redirige a login
     if (!nombreUsuario || !correoUsuario) {
@@ -9,10 +13,18 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'No has iniciado sesión',
             text: 'Debes iniciar sesión para ver tu perfil.',
             confirmButtonText: 'Iniciar sesión'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                window.location.href = 'login.html';
-            }
+        }).then(() => {
+            window.location.href = 'login.html';
         });
     }
+
+    editButton.addEventListener('click', () => {
+        editUser.style.display = 'grid';
+        mainMenu.style.display = 'none';
+    });
+
+    cancelEdit.addEventListener('click', () => {
+        editUser.style.display = 'none';
+        mainMenu.style.display = 'grid';
+    });
 });
