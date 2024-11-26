@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/general.css">
+    <link rel="stylesheet" href="./css/nuevoProducto.css">
+    <link rel="icon" href="./img/iconoTransparente.png" type="image/x-icon">
+    <title>Nuevo producto</title>
+</head>
+
+<body>
+    <nav>
+        <h1>Zona de administración</h1>
+        <div class="nav-buttons">
+            <a id="logoutB" class="logout-button">Cerrar sesión</a>
+            <button id="goBack">Volver atrás</button>
+        </div>
+    </nav>
+    <main>
+        <h1>Agregar Nuevo Producto</h1>
+        <form id="nuevoProductoForm" enctype="multipart/form-data">
+            <label for="nombreProducto">Nombre del Producto:</label>
+            <input type="text" id="nombreProducto" name="nombreProducto" required><br><br>
+
+            <label for="descProducto">Descripción:</label>
+            <textarea id="descProducto" name="descProducto" required></textarea><br><br>
+
+            <label for="categoriaProducto">Categoría:</label>
+            <input type="text" id="categoriaProducto" name="categoriaProducto" required><br><br>
+
+            <label for="fotosProducto">Fotos del Producto:</label>
+            <input type="file" id="fotosProducto" name="fotosProducto" multiple required><br><br>
+
+            <button type="submit">Crear Producto</button>
+        </form>
+    </main>
+
+    <script src="./js/newProducto.js"></script>
+    <script src="./js/logout.js"></script>
+    <script src="./js/volverAdmin.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>
