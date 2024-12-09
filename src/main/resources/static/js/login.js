@@ -3,15 +3,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const errorMessageElement = document.getElementById('errorMessage');
 
     form.addEventListener('submit', async function(event) {
-        event.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
+        event.preventDefault();
 
-        const correo = document.getElementById('correo').value.trim(); // Recortar espacios
-        const contrasena = document.getElementById('contrasena').value.trim(); // Recortar espacios
+        const correo = document.getElementById('correo').value.trim();
+        const contrasena = document.getElementById('contrasena').value.trim();
 
-        // Validar que ambos campos estén completos
         if (!correo || !contrasena) {
             errorMessageElement.textContent = 'Por favor, completa todos los campos.';
-            errorMessageElement.style.display = 'block'; // Mostrar el mensaje de error
+            errorMessageElement.style.display = 'block';
             return;
         }
 
@@ -19,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch('http://localhost:8080/api/usuarios/login', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded', // Cambiado a 'application/x-www-form-urlencoded'
+                    'Content-Type': 'application/x-www-form-urlencoded',
                 },
                 body: new URLSearchParams({
                     correo: correo,

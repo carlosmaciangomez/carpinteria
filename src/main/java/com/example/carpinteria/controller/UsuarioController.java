@@ -54,7 +54,6 @@ public class UsuarioController {
                 @RequestParam("correo") String correo,
                 @RequestParam("contrasena") String contrasena,
                 @RequestParam("telefono") String telefono,
-                //@RequestParam(value = "imagen", required = false) MultipartFile imagen,
                 HttpServletResponse response) throws IOException {
         
             try {
@@ -68,7 +67,6 @@ public class UsuarioController {
                 nuevoUsuario.setRolUsuario("C");
         
                 usuarioService.saveUsuario(nuevoUsuario);
-        
                 response.sendRedirect("/login.html");
             } catch (MaxUploadSizeExceededException e) {
                 response.sendError(HttpServletResponse.SC_BAD_REQUEST, "El tamaño del archivo excede el límite permitido.");

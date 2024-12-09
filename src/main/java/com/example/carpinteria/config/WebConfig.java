@@ -8,8 +8,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        // Configura la carpeta 'uploads' como un recurso estático
+        String uploadsDir = "file:/ruta/absoluta/a/carpinteria/uploads/";
+
         registry.addResourceHandler("/uploads/**")
-                .addResourceLocations("file:carpinteria/uploads/");
+                .addResourceLocations("C:/Users/Carlos/Desktop/carpinteria/carpinteria/uploads");
     }
 }
