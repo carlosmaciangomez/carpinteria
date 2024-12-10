@@ -9,6 +9,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -47,31 +48,34 @@ public class UsuarioController {
         }
     }
 
-        @PostMapping("/usuario")
-        public void createUsuario(
-                @RequestParam("nombre") String nombre,
-                @RequestParam("apellidos") String apellidos,
-                @RequestParam("correo") String correo,
-                @RequestParam("contrasena") String contrasena,
-                @RequestParam("telefono") String telefono,
-                HttpServletResponse response) throws IOException {
-        
-            try {
-                Usuario nuevoUsuario = new Usuario();
-                nuevoUsuario.setNombreUsuario(nombre);
-                nuevoUsuario.setApellidosUsuario(apellidos);
-                nuevoUsuario.setCorreoUsuario(correo);
-                nuevoUsuario.setContrasenaUsuario(contrasena);
-                nuevoUsuario.setTelefonoUsuario(Integer.parseInt(telefono));
-                nuevoUsuario.setEstadoUsuario("A");
-                nuevoUsuario.setRolUsuario("C");
-        
-                usuarioService.saveUsuario(nuevoUsuario);
-                response.sendRedirect("/login.html");
-            } catch (MaxUploadSizeExceededException e) {
-                response.sendError(HttpServletResponse.SC_BAD_REQUEST, "El tamaño del archivo excede el límite permitido.");
-            }
+    @PostMapping("/usuario")
+    public void createUsuario(
+            @RequestParam("nombre") String nombre,
+            @RequestParam("apellidos") String apellidos,
+            @RequestParam("correo") String correo,
+            @RequestParam("contrasena") String contrasena,
+            @RequestParam("telefono") String telefono,
+            HttpServletResponse response) throws IOException {
+
+        try {
+            BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+            String hashedPassword = passwordEncoder.encode(contrasena);
+
+            Usuario nuevoUsuario = new Usuario();
+            nuevoUsuario.setNombreUsuario(nombre);
+            nuevoUsuario.setApellidosUsuario(apellidos);
+            nuevoUsuario.setCorreoUsuario(correo);
+            nuevoUsuario.setContrasenaUsuario(hashedPassword);
+            nuevoUsuario.setTelefonoUsuario(Integer.parseInt(telefono));
+            nuevoUsuario.setEstadoUsuario("A");
+            nuevoUsuario.setRolUsuario("C");
+
+            usuarioService.saveUsuario(nuevoUsuario);
+            response.sendRedirect("/login.html");
+        } catch (MaxUploadSizeExceededException e) {
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "El tamaño del archivo excede el límite permitido.");
         }
+    }
 
     @PostMapping("/login")
     public ResponseEntity<Map<String, String>> loginUsuario(
@@ -80,15 +84,16 @@ public class UsuarioController {
 
         Usuario usuario = usuarioService.findByCorreo(correo);
 
-        if (usuario != null && usuario.getContrasenaUsuario().equals(contrasena)) {
-            Map<String, String> response = new HashMap<>();
-            response.put("rolUsuario", usuario.getRolUsuario());
-            response.put("nombreUsuario", usuario.getNombreUsuario());
-
-            return ResponseEntity.ok(response);
-        } else {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        if (usuario != null) {
+            BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+            if (passwordEncoder.matches(contrasena, usuario.getContrasenaUsuario())) {
+                Map<String, String> response = new HashMap<>();
+                response.put("rolUsuario", usuario.getRolUsuario());
+                response.put("nombreUsuario", usuario.getNombreUsuario());
+                return ResponseEntity.ok(response);
+            }
         }
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
     }
 
     @PutMapping("/{idUsuario}")

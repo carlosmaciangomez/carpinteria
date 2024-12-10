@@ -1,4 +1,4 @@
-package com.example.carpinteria.config;
+/*package com.example.carpinteria.config;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -27,4 +27,4 @@ public class HashExample {
         System.out.println("Original: " + original);
         System.out.println("Hash: " + hashString(original));
     }
-}
+}*/
