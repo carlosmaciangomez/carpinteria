@@ -1,0 +1,93 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#goBack {
+    margin-right: 0px;
+}
+
+main {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 50px auto 0 auto;
+    height: fit-content;
+    background-color: rgb(143, 143, 143);
+    border-radius: 6px;
+    padding: 23px;
+}
+
+main section div p {
+    margin: 10px 0;
+}
+
+#fotosResena {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#fotosResena img {
+    width: 270px;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+#fotosResena img:hover {
+    transform: scale(1.1);
+}
+
+button {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 200px;
+    margin: 10px auto;
+}
+
+#accept {
+    background-color: #4CAF50; /* Verde para el botón de aceptar */
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+#accept:hover {
+    background-color: #45a049; /* Verde oscuro al pasar el cursor */
+    transform: translateY(-2px); /* Efecto de desplazamiento */
+}
+
+#deny {
+    background-color: #f44336; /* Rojo para el botón de denegar */
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+#deny:hover {
+    background-color: #e53935; /* Rojo oscuro al pasar el cursor */
+    transform: translateY(-2px); /* Efecto de desplazamiento */
+}
+
+#delete {
+    background-color: #FF5722; /* Naranja para el botón de eliminar */
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+#delete:hover {
+    background-color: #f4511e; /* Naranja oscuro al pasar el cursor */
+    transform: translateY(-2px); /* Efecto de desplazamiento */
+}

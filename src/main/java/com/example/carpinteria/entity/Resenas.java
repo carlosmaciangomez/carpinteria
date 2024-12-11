@@ -25,6 +25,8 @@ public class Resenas {
     @Lob
     private List<String> fotosResena;
 
+    private String comentarioAdmin;
+
     public int getIdResena() {
         return idResena;
     }
@@ -79,5 +81,13 @@ public class Resenas {
 
     public void setFotosResena(List<String> fotosResena) {
         this.fotosResena = fotosResena;
+    }
+
+    public String getComentarioAdmin() {
+        return comentarioAdmin;
+    }
+
+    public void setComentarioAdmin(String comentarioAdmin) {
+        this.comentarioAdmin = comentarioAdmin;
     }
 }

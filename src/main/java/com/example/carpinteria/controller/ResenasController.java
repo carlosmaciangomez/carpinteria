@@ -57,4 +57,31 @@ public class ResenasController {
         return ResponseEntity.ok(resena);
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> eliminarResena(@PathVariable int id) {
+        Resenas resena = resenasService.findById(id);
+        if (resena == null) {
+            return ResponseEntity.notFound().build();
+        }
+        resenasService.deleteResena(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<Resenas> cambiarEstadoResena(@PathVariable int id, @RequestBody Map<String, String> estado) {
+        Resenas resena = resenasService.findById(id);
+        if (resena == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+        String nuevoEstado = estado.get("estadoResena");
+        if (nuevoEstado == null || (!nuevoEstado.equals("A") && !nuevoEstado.equals("D"))) {
+            return ResponseEntity.badRequest().build();
+        }
+
+        resena.setEstadoResena(nuevoEstado);
+        resenasService.saveResena(resena);
+
+        return ResponseEntity.ok(resena);
+    }
 }

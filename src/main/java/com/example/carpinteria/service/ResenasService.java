@@ -37,4 +37,8 @@ public class ResenasService {
     public List<Resenas> findAll() {
         return resenasRepository.findAll();
     }
+
+    public void deleteResena(int id) {
+        resenasRepository.deleteById(id);
+    }    
 }
