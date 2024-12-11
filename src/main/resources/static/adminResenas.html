@@ -8,9 +8,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/general.css">
-    <link rel="stylesheet" href="./css/adminUsuarios.css">
+    <link rel="stylesheet" href="./css/adminResenas.css">
     <link rel="icon" href="./img/iconoTransparente.png" type="image/x-icon">
-    <title>Administración usuarios</title>
+    <title>Administración reseñas</title>
 </head>
 
 <body>
@@ -24,17 +24,16 @@
     <main>
         <h2>Usuarios registrados</h2>
             
-        <table id="usuariosTable">
+        <table id="resenasTabla">
             <thead>
                 <tr>
+                    <th>ID Reseña</th>
+                    <th>Título</th>
+                    <th>Descripción</th>
+                    <th>Fecha de publicación</th>
+                    <th>Valoración</th>
                     <th>ID Usuario</th>
-                    <th>Nombre</th>
-                    <th>Apellidos</th>
-                    <th>Correo</th>
-                    <th>Contraseña</th>
-                    <th>Teléfono</th>
                     <th>Estado</th>
-                    <th>Rol</th>
                 </tr>
             </thead>
             <tbody>
@@ -43,8 +42,7 @@
         </table>
     </main>
     <script src="./js/volverAdmin.js"></script>
-    <script src="./js/showUsuarios.js"></script>
+    <script src="./js/showResenas.js"></script>
     <script src="./js/logout.js"></script>
 </body>
-
 </html>

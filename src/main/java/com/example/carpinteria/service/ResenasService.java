@@ -33,4 +33,8 @@ public class ResenasService {
     public Resenas findById(int id) {
         return resenasRepository.findById(id).orElse(null);
     }
+
+    public List<Resenas> findAll() {
+        return resenasRepository.findAll();
+    }
 }

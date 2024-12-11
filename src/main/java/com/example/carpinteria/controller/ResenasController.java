@@ -43,6 +43,11 @@ public class ResenasController {
         return resenasService.findByEstado(estado);
     }
 
+    @GetMapping("/todas")
+    public List<Resenas> obtenerTodasLasResenas() {
+        return resenasService.findAll();
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<Resenas> obtenerResena(@PathVariable int id) {
         Resenas resena = resenasService.findById(id);
