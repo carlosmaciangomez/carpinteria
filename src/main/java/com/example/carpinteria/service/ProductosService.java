@@ -21,4 +21,12 @@ public class ProductosService {
     public Productos guardarProducto(Productos producto) {
         return productosRepository.save(producto);
     }
+
+    public boolean eliminarProductoPorId(int idProducto) {
+        if (productosRepository.existsById(idProducto)) {
+            productosRepository.deleteById(idProducto);
+            return true;
+        }
+        return false;
+    }
 }

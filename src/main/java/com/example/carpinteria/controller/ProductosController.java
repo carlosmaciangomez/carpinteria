@@ -12,7 +12,9 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -75,6 +77,16 @@ public class ProductosController {
         } catch (IOException e) {
             e.printStackTrace();
             return ResponseEntity.status(500).body(Map.of("error", "Error al guardar las fotos: " + e.getMessage()));
+        }
+    }
+
+    @DeleteMapping("/{idProducto}")
+    public ResponseEntity<?> eliminarProducto(@PathVariable int idProducto) {
+        boolean eliminado = productosService.eliminarProductoPorId(idProducto);
+        if (eliminado) {
+            return ResponseEntity.ok(Map.of("mensaje", "Producto eliminado con éxito"));
+        } else {
+            return ResponseEntity.status(404).body(Map.of("error", "Producto no encontrado"));
         }
     }
 }
