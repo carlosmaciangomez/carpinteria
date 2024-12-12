@@ -34,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
         `).join('');
         productosDiv.innerHTML = productosHTML;
 
-        // Agregar event listeners a los botones de eliminar
         const botonesEliminar = document.querySelectorAll('.eliminar-producto');
         botonesEliminar.forEach(boton => {
             boton.addEventListener('click', async (e) => {
@@ -45,7 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     return;
                 }
 
-                // Mostrar confirmación con SweetAlert
                 const { isConfirmed } = await Swal.fire({
                     title: '¿Estás seguro?',
                     text: 'Esta acción eliminará el producto de forma permanente.',
@@ -69,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 'El producto ha sido eliminado con éxito.',
                                 'success'
                             );
-                            obtenerProductos(); // Recargar la lista de productos
+                            obtenerProductos();
                         } else {
                             Swal.fire(
                                 'Error',

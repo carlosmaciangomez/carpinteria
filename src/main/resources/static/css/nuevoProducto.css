@@ -1,3 +1,19 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+main > h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#descProducto {
+    max-width: 918px;
+}
+
 #nuevoProductoForm {
     display: flex;
     flex-direction: column;
@@ -40,4 +56,17 @@
 #successMessage, #errorMessage {
     text-align: center;
     font-size: 16px;
+}
+
+#helpContainer {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #6a6a6a;
+}
+
+.help-text {
+    background-color: #f8f8f8;
+    padding: 5px;
+    border-radius: 4px;
+    font-style: italic;
 }

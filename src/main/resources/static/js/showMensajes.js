@@ -29,6 +29,11 @@ function mostrarMensajes(mensajes) {
                 <td>${mensaje.textoMensaje}</td>
                 <td>${mensaje.correoContacto}</td>
             `;
+            
+            fila.addEventListener('click', () => {
+                window.location.href = `gestionarMensaje.html?idMensaje=${mensaje.idMensaje}`;
+            });
+
             contenedor.appendChild(fila);
         });
     } else {
