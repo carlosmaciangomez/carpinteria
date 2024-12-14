@@ -89,6 +89,7 @@ public class UsuarioController {
             if (passwordEncoder.matches(contrasena, usuario.getContrasenaUsuario())) {
                 Map<String, String> response = new HashMap<>();
                 response.put("rolUsuario", usuario.getRolUsuario());
+                response.put("idUsuario", String.valueOf(usuario.getIdUsuario()));
                 response.put("nombreUsuario", usuario.getNombreUsuario());
                 return ResponseEntity.ok(response);
             }

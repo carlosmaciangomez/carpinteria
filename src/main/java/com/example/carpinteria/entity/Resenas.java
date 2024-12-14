@@ -21,6 +21,7 @@ public class Resenas {
     private Date fechaResena;
     private int valoracionResena;
     private String estadoResena;
+    private int idUsuario;
 
     @Lob
     private List<String> fotosResena;
@@ -89,5 +90,13 @@ public class Resenas {
 
     public void setComentarioAdmin(String comentarioAdmin) {
         this.comentarioAdmin = comentarioAdmin;
+    }
+
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
     }
 }

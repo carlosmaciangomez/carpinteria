@@ -70,7 +70,8 @@ document.getElementById('resenaForm').addEventListener('submit', function (event
         descripcionResena: descripcion,
         valoracionResena: valoracion.value,
         estadoResena: "W",
-        fotosResena: fotosResena
+        fotosResena: fotosResena,
+        idUsuario: sessionStorage.getItem('idUsuario')
     };
 
     fetch('/api/resenas/crear', {

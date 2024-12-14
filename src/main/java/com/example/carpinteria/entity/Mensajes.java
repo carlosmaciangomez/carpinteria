@@ -16,6 +16,7 @@ public class Mensajes {
     private String asuntoMensaje;
     private String textoMensaje;
     private String correoUsuario;
+    private int idUsuario;
     
     public int getIdMensaje() {
         return idMensaje;
@@ -55,5 +56,13 @@ public class Mensajes {
 
     public void setCorreoUsuario(String correoUsuario) {
         this.correoUsuario = correoUsuario;
+    }
+
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
     }
 }

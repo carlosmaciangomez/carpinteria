@@ -30,10 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 const data = await response.json();
                 const rolUsuario = data.rolUsuario;
                 const nombreUsuario = data.nombreUsuario;
+                const idUsuario = data.idUsuario;
     
                 sessionStorage.setItem('rolUsuario', rolUsuario);
                 sessionStorage.setItem('nombreUsuario', nombreUsuario);
                 sessionStorage.setItem('correoUsuario', correo);
+                sessionStorage.setItem('idUsuario', idUsuario);
     
                 if (rolUsuario === 'A') {
                     window.location.href = 'administracion.html';

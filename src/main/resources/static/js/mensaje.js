@@ -47,7 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     correoUsuario: correoUsuario,
                     correoContacto: correoContacto,
                     asuntoMensaje: asuntoMensaje,
-                    textoMensaje: textoMensaje
+                    textoMensaje: textoMensaje,
+                    idUsuario: sessionStorage.getItem('idUsuario')
                 })
             })
                 .then(response => {

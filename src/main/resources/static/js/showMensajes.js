@@ -18,7 +18,7 @@ function mostrarMensajes(mensajes) {
     const contenedor = document.getElementById('mensajesTable').getElementsByTagName('tbody')[0];
 
     if (contenedor) {
-        contenedor.innerHTML = ''; // Limpiar la tabla
+        contenedor.innerHTML = '';
 
         mensajes.forEach(mensaje => {
             const fila = document.createElement('tr');
@@ -29,10 +29,11 @@ function mostrarMensajes(mensajes) {
                 <td>${mensaje.textoMensaje}</td>
                 <td>${mensaje.correoContacto}</td>
             `;
-            
+            /*
             fila.addEventListener('click', () => {
                 window.location.href = `gestionarMensaje.html?idMensaje=${mensaje.idMensaje}`;
             });
+            */
 
             contenedor.appendChild(fila);
         });
