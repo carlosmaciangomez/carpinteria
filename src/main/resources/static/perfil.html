@@ -155,7 +155,7 @@
 
 
         <div id="editUser">
-            <form>
+            <form id="formUsuario">
                 <h2>Editar perfil</h2>
                 <div>
                     <label for="first-name">Nombre:</label>
@@ -208,6 +208,8 @@
                     <button type="button">Eliminar Cuenta</button>
                 </div>
 
+                <div id="helpContainer"></div>
+
                 <div>
                     <button type="submit">Guardar cambios</button>
                     <button type="button" id="cancelEdit">Cancelar edición</button>
@@ -245,7 +247,9 @@
             <p>Macián Carpintería es una empresa registrada en España.</p>
         </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bcrypt/5.0.1/bcrypt.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+    <script src="./js/editarPerfilForm.js"></script>
     <script src="./js/perfil.js"></script>
     <script src="./js/logout.js"></script>
     <script src="./js/cookies2.js"></script>

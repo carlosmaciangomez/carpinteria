@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const cancelEdit = document.getElementById('cancelEdit');
     const mainMenu = document.getElementById('mainMenu');
 
-    //Valida si está iniciado sesión y sino redirige a login
     if (!nombreUsuario || !correoUsuario) {
         Swal.fire({
             icon: 'warning',

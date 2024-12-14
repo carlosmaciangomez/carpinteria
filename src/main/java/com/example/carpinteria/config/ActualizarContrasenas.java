@@ -1,4 +1,4 @@
-/*ackage com.example.carpinteria.config;
+/*package com.example.carpinteria.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

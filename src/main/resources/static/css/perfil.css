@@ -69,10 +69,6 @@ main {
     border-color: #888;
 }
 
-
-
-
-
 #editUser {
     display: none;
 }
@@ -200,4 +196,8 @@ button.hide .toggle-password {
     background-image: url('../img/psswdOff.png');
 }
 
-
+.help-text {
+    margin-top: 10px;
+    color: #666;
+    font-size: 14px;
+}

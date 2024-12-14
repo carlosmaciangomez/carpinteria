@@ -28,11 +28,11 @@ function showHelp(event) {
 
     const input = event.target;
 
-    // Limpiar mensajes anteriores
+    
     const helpContainer = document.getElementById('helpContainer');
     helpContainer.innerHTML = '';
 
-    // Crear y mostrar el nuevo mensaje de ayuda
+    
     const helpDiv = document.createElement('div');
     helpDiv.className = 'help-text';
     helpDiv.textContent = helpText[input.id] || 'No hay información disponible.';
@@ -128,7 +128,6 @@ function validarFormulario() {
     let isValid = true;
     const helpContainer = document.getElementById('helpContainer');
     
-    // Limpiar mensajes previos
     helpContainer.innerHTML = '';
 
     function showError(message) {
