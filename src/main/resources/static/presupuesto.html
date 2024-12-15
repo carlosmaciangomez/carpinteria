@@ -55,20 +55,20 @@
                 <label for="telefono">Teléfono:</label>
                 <input type="tel" id="telefono" name="telefono" required>
             </div>
-            <div>
-                <label for="itemSelector">Selecciona un tipo:</label>
-                <select id="itemSelector">
-                    <option value="armario">Armario</option>
-                    <option value="mesa">Mesa</option>
-                    <option value="silla">Silla</option>
-                    <option value="estanteria">Estantería</option>
-                    <option value="puerta">Puerta</option>
-                    <option value="suelo">Suelo</option>
-                </select>
-                <button type="button" id="addItemButton">Añadir formulario</button>
-            </div>
 
-            <div id="formContainer"></div>
+            <h3>Detalles del mueble:</h3>
+            <div>
+                <label for="nombreMueble">Nombre del mueble:</label>
+                <input type="text" id="nombreMueble" name="nombreMueble" required>
+            </div>
+            <div>
+                <label for="dimensiones">Dimensiones (Largo x Ancho x Alto):</label>
+                <input type="text" id="dimensionesMueble" name="dimensiones" required>
+            </div>
+            <div>
+                <label for="unidades">Unidades en total:</label>
+                <input type="number" id="unidadesMueble" name="unidades" required>
+            </div>
 
             <button type="button" id="generatePdf">Generar Presupuesto</button>
         </form>

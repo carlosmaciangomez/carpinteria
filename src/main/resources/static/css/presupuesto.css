@@ -32,9 +32,9 @@ form label {
     margin-bottom: 5px;
 }
 
-#budgetForm > h3:first-of-type {
-    margin-top: 20px;
-    margin-bottom: 10px;
+#budgetForm > h3 {
+    margin-top: 23px;
+    margin-bottom: 15px;
 }
 
 form input {
