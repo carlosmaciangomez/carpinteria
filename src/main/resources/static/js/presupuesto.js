@@ -101,6 +101,9 @@ document.getElementById("generatePdf").addEventListener("click", async () => {
     const dniCif = document.getElementById("dniCif").value;
     const phone = document.getElementById("telefono").value;
 
+    const currentDate = new Date();
+    const formattedDate = currentDate.toLocaleDateString('es-ES');
+
     // Leer la plantilla PDF
     const pdfBytes = await fetch("plantilla.pdf").then(res => res.arrayBuffer());
     const pdfDoc = await PDFLib.PDFDocument.load(pdfBytes);
@@ -121,8 +124,10 @@ document.getElementById("generatePdf").addEventListener("click", async () => {
     const telefonoField = form.getTextField("telefono");
     telefonoField.setText(phone);
 
-    // Opcional: eliminar los campos de formulario para que no sean editables
-    form.flatten();  // Esto convierte los campos en texto estático, eliminando la interactividad
+    const fechaField = form.getTextField("fecha");
+    fechaField.setText(formattedDate);
+
+    form.flatten();
 
     // Guardar el PDF modificado
     const pdfBytesOutput = await pdfDoc.save();
