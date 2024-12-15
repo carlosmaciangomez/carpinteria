@@ -6,11 +6,11 @@ function generateForm(itemType) {
             <div class="form-item" data-type="armario">
                 <h3>Armario</h3>
                 <label for="armarioTipo">Tipo de Armario:</label>
-                <input type="text" name="armarioTipo" placeholder="Ej. Armario de dos puertas">
+                <input type="text" id="armarioTipo" name="armarioTipo" placeholder="Ej. Armario de dos puertas">
                 <label for="armarioDimensiones">Dimensiones (cm):</label>
-                <input type="text" name="armarioDimensiones" placeholder="Ej. 120x60x200">
+                <input type="text" id="armarioDimensiones" name="armarioDimensiones" placeholder="Ej. 120x60x200">
                 <label for="armarioCantidad">Cantidad:</label>
-                <input type="number" name="armarioCantidad" min="1" value="1">
+                <input type="number" id="armarioCantidad" name="armarioCantidad" min="1" value="1">
                 <button type="button" class="deleteButton">Eliminar</button>
             </div>
         `;
@@ -19,11 +19,11 @@ function generateForm(itemType) {
             <div class="form-item" data-type="mesa">
                 <h3>Mesa</h3>
                 <label for="mesaTipo">Tipo de Mesa:</label>
-                <input type="text" name="mesaTipo" placeholder="Ej. Mesa de comedor">
+                <input type="text" id="mesaTipo" name="mesaTipo" placeholder="Ej. Mesa de comedor">
                 <label for="mesaDimensiones">Dimensiones (cm):</label>
-                <input type="text" name="mesaDimensiones" placeholder="Ej. 180x80x75">
+                <input type="text" id="mesaDimensiones" name="mesaDimensiones" placeholder="Ej. 180x80x75">
                 <label for="mesaCantidad">Cantidad:</label>
-                <input type="number" name="mesaCantidad" min="1" value="1">
+                <input type="number" id="mesaCantidad" name="mesaCantidad" min="1" value="1">
                 <button type="button" class="deleteButton">Eliminar</button>
             </div>
         `;
@@ -100,6 +100,9 @@ document.getElementById("generatePdf").addEventListener("click", async () => {
     const email = document.getElementById("email").value;
     const dniCif = document.getElementById("dniCif").value;
     const phone = document.getElementById("telefono").value;
+    const armarioTipo = document.getElementById("armarioTipo").value;
+    const armarioDimensiones = document.getElementById("armarioDimensiones").value;
+    const armarioCantidad = document.getElementById("armarioCantidad").value;
 
     const currentDate = new Date();
     const formattedDate = currentDate.toLocaleDateString('es-ES');
@@ -126,6 +129,21 @@ document.getElementById("generatePdf").addEventListener("click", async () => {
 
     const fechaField = form.getTextField("fecha");
     fechaField.setText(formattedDate);
+
+    const armarioTipoField = form.getTextField("nombre");
+    armarioTipoField.setText(armarioTipo);
+    armarioTipoField.setFontSize(10);
+
+    const armarioDimensionesField = form.getTextField("dimensiones");
+    armarioDimensionesField.setText(armarioDimensiones);
+    armarioDimensionesField.setFontSize(10);
+
+    const armarioCantidadField = form.getTextField("totalUnidades");
+    armarioCantidadField.setText(armarioCantidad);
+    armarioCantidadField.setFontSize(10);
+
+    
+    
 
     form.flatten();
 
