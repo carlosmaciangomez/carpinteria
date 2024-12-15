@@ -1,106 +1,136 @@
+function generateForm(itemType) {
+    let formHTML = '';
+
+    if (itemType === 'armario') {
+        formHTML = `
+            <div class="form-item" data-type="armario">
+                <h3>Armario</h3>
+                <label for="armarioTipo">Tipo de Armario:</label>
+                <input type="text" name="armarioTipo" placeholder="Ej. Armario de dos puertas">
+                <label for="armarioDimensiones">Dimensiones (cm):</label>
+                <input type="text" name="armarioDimensiones" placeholder="Ej. 120x60x200">
+                <label for="armarioCantidad">Cantidad:</label>
+                <input type="number" name="armarioCantidad" min="1" value="1">
+                <button type="button" class="deleteButton">Eliminar</button>
+            </div>
+        `;
+    } else if (itemType === 'mesa') {
+        formHTML = `
+            <div class="form-item" data-type="mesa">
+                <h3>Mesa</h3>
+                <label for="mesaTipo">Tipo de Mesa:</label>
+                <input type="text" name="mesaTipo" placeholder="Ej. Mesa de comedor">
+                <label for="mesaDimensiones">Dimensiones (cm):</label>
+                <input type="text" name="mesaDimensiones" placeholder="Ej. 180x80x75">
+                <label for="mesaCantidad">Cantidad:</label>
+                <input type="number" name="mesaCantidad" min="1" value="1">
+                <button type="button" class="deleteButton">Eliminar</button>
+            </div>
+        `;
+    } else if (itemType === 'silla') {
+        formHTML = `
+            <div class="form-item" data-type="silla">
+                <h3>Silla</h3>
+                <label for="sillaTipo">Tipo de Silla:</label>
+                <input type="text" name="sillaTipo" placeholder="Ej. Silla de oficina">
+                <label for="sillaDimensiones">Dimensiones (cm):</label>
+                <input type="text" name="sillaDimensiones" placeholder="Ej. 50x50x100">
+                <label for="sillaCantidad">Cantidad:</label>
+                <input type="number" name="sillaCantidad" min="1" value="1">
+                <button type="button" class="deleteButton">Eliminar</button>
+            </div>
+        `;
+    } else if (itemType === 'estanteria') {
+        formHTML = `
+            <div class="form-item" data-type="estanteria">
+                <h3>Estantería</h3>
+                <label for="estanteriaTipo">Tipo de Estantería:</label>
+                <input type="text" name="estanteriaTipo" placeholder="Ej. Estantería de madera">
+                <label for="estanteriaDimensiones">Dimensiones (cm):</label>
+                <input type="text" name="estanteriaDimensiones" placeholder="Ej. 120x40x180">
+                <label for="estanteriaCantidad">Cantidad:</label>
+                <input type="number" name="estanteriaCantidad" min="1" value="1">
+                <button type="button" class="deleteButton">Eliminar</button>
+            </div>
+        `;
+    } else if (itemType === 'puerta') {
+        formHTML = `
+            <div class="form-item" data-type="puerta">
+                <h3>Puerta</h3>
+                <label for="puertaTipo">Tipo de Puerta:</label>
+                <input type="text" name="puertaTipo" placeholder="Ej. Puerta de madera maciza">
+                <label for="puertaDimensiones">Dimensiones (cm):</label>
+                <input type="text" name="puertaDimensiones" placeholder="Ej. 80x200">
+                <label for="puertaCantidad">Cantidad:</label>
+                <input type="number" name="puertaCantidad" min="1" value="1">
+                <button type="button" class="deleteButton">Eliminar</button>
+            </div>
+        `;
+    } else if (itemType === 'suelo') {
+        formHTML = `
+            <div class="form-item" data-type="suelo">
+                <h3>Suelo</h3>
+                <label for="sueloArea">Área (m²):</label>
+                <input type="number" name="sueloArea" min="1" placeholder="Ej. 20">
+                <label for="sueloTipo">Tipo de Madera:</label>
+                <input type="text" name="sueloTipo" placeholder="Ej. Roble, Nogal">
+                <button type="button" class="deleteButton">Eliminar</button>
+            </div>
+        `;
+    }
+
+    document.getElementById('formContainer').insertAdjacentHTML('beforeend', formHTML);
+
+    const deleteButton = document.querySelector('.form-item:last-child .deleteButton');
+    deleteButton.addEventListener('click', function() {
+        const formItem = this.closest('.form-item');
+        formItem.remove();
+    });
+}
+
+// Evento para añadir el formulario cuando se hace click en el botón
+document.getElementById('addItemButton').addEventListener('click', function() {
+    const selectedType = document.getElementById('itemSelector').value;
+    generateForm(selectedType);
+});
 
 document.getElementById("generatePdf").addEventListener("click", async () => {
-    try {
-        // Obtener datos del formulario
-        const furnitureType = document.getElementById("furnitureType").value;
-        const furnitureDimensions = document.getElementById("furnitureDimensions").value;
-        const furnitureQuantity = document.getElementById("furnitureQuantity").value;
-        const floorArea = document.getElementById("floorArea").value;
-        const woodType = document.getElementById("woodType").value;
+    // Obtener valores del formulario
+    const name = document.getElementById("nombreUsuario").value;
+    const email = document.getElementById("email").value;
+    const dniCif = document.getElementById("dniCif").value;
+    const phone = document.getElementById("telefono").value;
 
-        // Solicitar datos del usuario desde el backend
-        const userResponse = await fetch("/api/user", { method: "GET" });
-        if (!userResponse.ok) throw new Error("No se pudieron obtener los datos del usuario");
-        const user = await userResponse.json();
-        
-        const userName = user.name || "N/A";
-        const userEmail = user.email || "N/A";
-        const userPhone = user.phone || "N/A";
+    // Leer la plantilla PDF
+    const pdfBytes = await fetch("plantilla.pdf").then(res => res.arrayBuffer());
+    const pdfDoc = await PDFLib.PDFDocument.load(pdfBytes);
 
-        // Cargar plantilla PDF
-        const existingPdfBytes = await fetch("plantilla.pdf").then(res => res.arrayBuffer());
+    // Acceder a los campos de formulario
+    const form = pdfDoc.getForm();
 
-        const { PDFDocument } = PDFLib;
-        const pdfDoc = await PDFDocument.load(existingPdfBytes);
-        const form = pdfDoc.getForm();
+    // Asignar valores a los campos del PDF
+    const nombreUsuarioField = form.getTextField("nombreUsuario");
+    nombreUsuarioField.setText(name);
 
-        // Rellenar campos del PDF
-        form.getTextField("furnitureTypeField").setText(furnitureType || "N/A");
-        form.getTextField("furnitureDimensionsField").setText(furnitureDimensions || "N/A");
-        form.getTextField("furnitureQuantityField").setText(furnitureQuantity || "0");
-        form.getTextField("floorAreaField").setText(floorArea || "0");
-        form.getTextField("woodTypeField").setText(woodType || "N/A");
+    const emailField = form.getTextField("email");
+    emailField.setText(email);
 
-        // Rellenar datos del usuario
-        form.getTextField("nameField").setText(userName);
-        form.getTextField("emailField").setText(userEmail);
-        form.getTextField("phoneField").setText(userPhone);
+    const dniCifField = form.getTextField("dniCif");
+    dniCifField.setText(dniCif);
 
-        // Generar y descargar el PDF
-        const pdfBytes = await pdfDoc.save();
-        const blob = new Blob([pdfBytes], { type: "application/pdf" });
-        const link = document.createElement("a");
-        link.href = URL.createObjectURL(blob);
-        link.download = "presupuesto.pdf";
-        link.click();
-    } catch (err) {
-        console.error("Error:", err.message);
-    }
+    const telefonoField = form.getTextField("telefono");
+    telefonoField.setText(phone);
+
+    // Opcional: eliminar los campos de formulario para que no sean editables
+    form.flatten();  // Esto convierte los campos en texto estático, eliminando la interactividad
+
+    // Guardar el PDF modificado
+    const pdfBytesOutput = await pdfDoc.save();
+
+    // Descargar el PDF
+    const blob = new Blob([pdfBytesOutput], { type: "application/pdf" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "presupuesto.pdf";
+    link.click();
 });
-
-/*
-document.addEventListener('DOMContentLoaded', () => {
-    const addMuebleButton = document.getElementById('addMueble');
-    const addSueloButton = document.getElementById('addSuelo');
-
-    // Función para añadir otro mueble
-    addMuebleButton.addEventListener('click', () => {
-        const mueblesSection = document.getElementById('muebles');
-        const newMueble = document.createElement('div');
-        newMueble.classList.add('mueble');
-        
-        newMueble.innerHTML = `
-            <div>
-                <label for="furnitureType">Tipo de Mueble:</label>
-                <input type="text" class="furnitureType" name="furnitureType" placeholder="Ej. Mesa, Armario">
-            </div>
-            <div>
-                <label for="furnitureDimensions">Dimensiones (cm):</label>
-                <input type="text" class="furnitureDimensions" name="furnitureDimensions" placeholder="Ej. 120x60x80">
-            </div>
-            <div>
-                <label for="furnitureQuantity">Cantidad:</label>
-                <input type="number" class="furnitureQuantity" name="furnitureQuantity" min="1" value="1">
-            </div>
-        `;
-        
-        mueblesSection.appendChild(newMueble);
-    });
-
-    // Función para añadir otro suelo
-    addSueloButton.addEventListener('click', () => {
-        const suelosSection = document.getElementById('suelos');
-        const newSuelo = document.createElement('div');
-        newSuelo.classList.add('suelo');
-        
-        newSuelo.innerHTML = `
-            <div>
-                <label for="floorArea">Área (m²):</label>
-                <input type="number" class="floorArea" name="floorArea" min="1" placeholder="Ej. 20">
-            </div>
-            <div>
-                <label for="woodType">Tipo de Madera:</label>
-                <input type="text" class="woodType" name="woodType" placeholder="Ej. Roble, Nogal">
-            </div>
-        `;
-        
-        suelosSection.appendChild(newSuelo);
-    });
-
-    // Función para generar el PDF (si lo necesitas más tarde)
-    document.getElementById('generatePdf').addEventListener('click', () => {
-        // Aquí iría tu lógica para generar el PDF
-        alert('Generar el PDF');
-    });
-});
-*/

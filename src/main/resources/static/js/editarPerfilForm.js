@@ -26,11 +26,11 @@ function showHelp(event) {
 
     const input = event.target;
 
-    
+
     const helpContainer = document.getElementById('helpContainer');
     helpContainer.innerHTML = '';
 
-    
+
     const helpDiv = document.createElement('div');
     helpDiv.className = 'help-text';
     helpDiv.textContent = helpText[input.id];
@@ -162,28 +162,28 @@ async function actualizarUsuario(id) {
         },
         body: JSON.stringify(usuario)
     })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`Error al actualizar el usuario: ${response.status} ${response.statusText}`);
-        }
-        return response.json();
-    })
-    .then(data => {
-        //console.log('Usuario actualizado:', data);
-        Swal.fire({
-            icon: 'success',
-            title: 'Éxito',
-            text: 'Usuario actualizado exitosamente.'
-        }).then(() => {
-            window.location.href = 'perfil.html';
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Error al actualizar el usuario: ${response.status} ${response.statusText}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            //console.log('Usuario actualizado:', data);
+            Swal.fire({
+                icon: 'success',
+                title: 'Éxito',
+                text: 'Usuario actualizado exitosamente.'
+            }).then(() => {
+                window.location.href = 'perfil.html';
+            });
+        })
+        .catch(error => {
+            console.error(error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Hubo un problema al actualizar el usuario.'
+            });
         });
-    })
-    .catch(error => {
-        console.error(error);
-        Swal.fire({
-            icon: 'error',
-            title: 'Error',
-            text: 'Hubo un problema al actualizar el usuario.'
-        });
-    });
 }

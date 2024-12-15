@@ -27,7 +27,7 @@ function mostrarResenas(resenas) {
 
             const article = document.createElement('article');
             
-            const imagenSrc = resena.fotosResena[0];          
+            const imagenSrc = resena.fotosResena[0];
             
             //console.log(imagenSrc);
 
