@@ -10,20 +10,20 @@ document.addEventListener('DOMContentLoaded', () => {
         Swal.fire({
             icon: 'warning',
             title: 'No has iniciado sesión',
-            text: 'Debes iniciar sesión para ver tu perfil.',
-            confirmButtonText: 'Iniciar sesión'
-        }).then(() => {
-            window.location.href = 'login.html';
+            text: 'Debes iniciar sesión para generar un presupuesto.',
+            confirmButtonText: 'Aceptar'
+        });
+        window.location.href = 'login.html';
+    } else {
+
+        editButton.addEventListener('click', () => {
+            editUser.style.display = 'grid';
+            mainMenu.style.display = 'none';
+        });
+
+        cancelEdit.addEventListener('click', () => {
+            editUser.style.display = 'none';
+            mainMenu.style.display = 'grid';
         });
     }
-
-    editButton.addEventListener('click', () => {
-        editUser.style.display = 'grid';
-        mainMenu.style.display = 'none';
-    });
-
-    cancelEdit.addEventListener('click', () => {
-        editUser.style.display = 'none';
-        mainMenu.style.display = 'grid';
-    });
 });

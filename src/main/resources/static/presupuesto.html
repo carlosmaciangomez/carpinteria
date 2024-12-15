@@ -12,6 +12,7 @@
     <link rel="icon" href="./img/iconoTransparente.png" type="image/x-icon">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Formulario de presupuesto</title>
 </head>
 
@@ -31,8 +32,8 @@
         <a href="/perfil.html">
             <img src="./img/user-interface.png" alt="LogoPerfil" title="Mi perfil">
             <span id="nombreUsuarioNav"></span>
+            <a id="logoutB" class="logout-button">Cerrar sesión</a>
         </a>
-        <a id="logoutB" class="logout-button">Cerrar sesión</a>
     </nav>
 
     <main>
@@ -69,11 +70,9 @@
                 <label for="unidades">Unidades en total:</label>
                 <input type="number" id="unidadesMueble" name="unidades" required>
             </div>
-
             <button type="button" id="generatePdf">Generar Presupuesto</button>
         </form>
     </main>
-
 
     <footer>
         <section>
@@ -106,53 +105,8 @@
     </footer>
     <script src="./js/presupuesto.js"></script>
     <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
-
-    <!--
-    <script>
-        document.getElementById("generatePdf").addEventListener("click", async () => {
-            // Obtener valores del formulario
-            const name = document.getElementById("nombreUsuario").value;
-            const email = document.getElementById("email").value;
-            const dniCif = document.getElementById("dniCif").value;
-            const phone = document.getElementById("telefono").value;
-
-            // Leer la plantilla PDF
-            const pdfBytes = await fetch("plantilla.pdf").then(res => res.arrayBuffer());
-            const pdfDoc = await PDFLib.PDFDocument.load(pdfBytes);
-
-            // Acceder a los campos de formulario
-            const form = pdfDoc.getForm();
-
-            // Asignar valores a los campos del PDF
-            const nombreUsuarioField = form.getTextField("nombreUsuario");
-            nombreUsuarioField.setText(name);
-
-            const emailField = form.getTextField("email");
-            emailField.setText(email);
-
-            const dniCifField = form.getTextField("dniCif");
-            dniCifField.setText(dniCif);
-
-            const telefonoField = form.getTextField("telefono");
-            telefonoField.setText(phone);
-
-            // Opcional: eliminar los campos de formulario para que no sean editables
-            form.flatten();  // Esto convierte los campos en texto estático, eliminando la interactividad
-
-            // Guardar el PDF modificado
-            const pdfBytesOutput = await pdfDoc.save();
-
-            // Descargar el PDF
-            const blob = new Blob([pdfBytesOutput], { type: "application/pdf" });
-            const link = document.createElement("a");
-            link.href = URL.createObjectURL(blob);
-            link.download = "presupuesto.pdf";
-            link.click();
-        });
-    </script>
-    -->
     <script src="./js/logout.js"></script>
-    <script src="./js/cookies2.js"></script>
+    <script src="./js/cookies3.js"></script>
 </body>
 
 </html>

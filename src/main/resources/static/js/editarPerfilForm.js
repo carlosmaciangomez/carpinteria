@@ -1,18 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
     const userId = sessionStorage.getItem('idUsuario');
-    cargarUsuario(userId);
+    const nombreUsuario = sessionStorage.getItem('nombreUsuario');
+    const correoUsuario = sessionStorage.getItem('correoUsuario');
+    
+    if (!nombreUsuario || !correoUsuario) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'No has iniciado sesión',
+            text: 'Debes iniciar sesión para generar un presupuesto.',
+            confirmButtonText: 'Aceptar'
+        });
+        window.location.href = 'login.html';
+    } else {
+        cargarUsuario(userId);
 
-    document.getElementById('formUsuario').addEventListener('submit', (e) => {
-        e.preventDefault();
-        if (validarFormulario()) {
-            actualizarUsuario(userId);
-        }
-    });
+        document.getElementById('formUsuario').addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (validarFormulario()) {
+                actualizarUsuario(userId);
+            }
+        });
 
-    const inputs = document.querySelectorAll('#formUsuario input');
-    inputs.forEach(input => {
-        input.addEventListener('focus', showHelp);
-    });
+        const inputs = document.querySelectorAll('#formUsuario input');
+        inputs.forEach(input => {
+            input.addEventListener('focus', showHelp);
+        });
+    }
 });
 
 function showHelp(event) {
