@@ -241,3 +241,7 @@ main > a, div {
 #imgpuerta {
     max-height: 500px !important;
 }
+
+#imgpiscina, #imgcocina {
+    object-fit: cover !important;
+}
