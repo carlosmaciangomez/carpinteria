@@ -24,6 +24,7 @@
     </header>
 
     <nav>
+        <a href="/index.html">Inicio</a>
         <a href="./resenas.html">Reseñas</a>
         <a href="./mensaje.html">Envíanos un mensaje</a>
         <a href="./productos.html">Nuestros productos</a>
@@ -32,8 +33,8 @@
         <a href="/perfil.html">
             <img src="./img/user-interface.png" alt="LogoPerfil" title="Mi perfil">
             <span id="nombreUsuarioNav"></span>
-            <a id="logoutB" class="logout-button">Cerrar sesión</a>
         </a>
+        <a id="logoutB" class="logout-button">Cerrar sesión</a>
     </nav>
 
     <main>
@@ -41,34 +42,34 @@
         <form id="budgetForm">
             <h3>Datos del cliente:</h3>
             <div>
-                <label for="nombreUsuario">Nombre:</label>
-                <input type="text" id="nombreUsuario" name="nombreUsuario" required>
+                <label for="nombreUsuario">Nombre y apellidos:</label>
+                <input type="text" id="nombreUsuario" name="nombreUsuario" required placeholder="Ingrese su nombre y apellidos">
             </div>
             <div>
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" required placeholder="Ingrese su email">
             </div>
             <div>
                 <label for="dniCif">DNI o CIF:</label>
-                <input type="text" id="dniCif" name="dniCif" required>
+                <input type="text" id="dniCif" name="dniCif" required placeholder="Ingrese su DNI o CIF">
             </div>
             <div>
                 <label for="telefono">Teléfono:</label>
-                <input type="tel" id="telefono" name="telefono" required>
+                <input type="tel" id="telefono" name="telefono" required placeholder="Ingrese su teléfono">
             </div>
 
             <h3>Detalles del mueble:</h3>
             <div>
-                <label for="nombreMueble">Nombre del mueble:</label>
-                <input type="text" id="nombreMueble" name="nombreMueble" required>
+                <label for="nombreMueble">Nombre y descripción detallada del mueble:</label>
+                <input type="text" id="nombreMueble" name="nombreMueble" required placeholder="Ejemplo: Mesa de noche, armario empotrado...">
             </div>
             <div>
-                <label for="dimensiones">Dimensiones (Largo x Ancho x Alto):</label>
-                <input type="text" id="dimensionesMueble" name="dimensiones" required>
+                <label for="dimensiones">Dimensiones (Largo x Ancho x Alto "cm"):</label>
+                <input type="text" id="dimensionesMueble" name="dimensiones" required placeholder="Ejemplo: 100x50x200, 150x60x200...">
             </div>
             <div>
                 <label for="unidades">Unidades en total:</label>
-                <input type="number" id="unidadesMueble" name="unidades" required>
+                <input type="text" id="unidadesMueble" name="unidades" required placeholder="Ejemplo: 2, 1...">
             </div>
             <button type="button" id="generatePdf">Generar Presupuesto</button>
         </form>

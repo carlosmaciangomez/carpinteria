@@ -64,7 +64,7 @@ function showHelp(event) {
     const helpText = {
         nombreProducto: 'El nombre debe tener entre 2 y 20 caracteres.',
         descProducto: 'La descripción debe ser detallada para proporcionar una mejor experiencia a los usuarios.',
-        categoriaProducto: 'Debe de ser una letra mayúscula (A- ARMARIO, M- MESA, C- COCINA, S- SILLA, B- BAÑO)',
+        categoriaProducto: 'Debe de ser una letra mayúscula (A- ARMARIO, M- MESA/ ESCRITORIO, S- SILLA, E- ESTANTERÍA, P- PUERTA, C- COCINA, B- BAÑO, F- SUELO, O. OTROS).',
         fotosProducto: 'Puedes seleccionar varias fotos del producto.',
     };
 

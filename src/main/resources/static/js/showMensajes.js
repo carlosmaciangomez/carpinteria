@@ -27,6 +27,7 @@ function mostrarMensajes(mensajes) {
                 <td>${mensaje.correoUsuario}</td>
                 <td>${mensaje.asuntoMensaje}</td>
                 <td>${mensaje.textoMensaje}</td>
+                <td>${mensaje.idUsuario}</td>
                 <td>${mensaje.correoContacto}</td>
             `;
             /*

@@ -193,29 +193,51 @@ main > article > div:nth-of-type(2) article {
     object-fit: contain;
 }
 
+/**/
+
 #nuevoDiv {
     display: flex;
     width: 77%;
-    margin: 50px 0;
+    margin: 50px auto;
     align-items: center;
     justify-content: space-between;
     padding: 20px;
     box-sizing: border-box;
     transition: transform 0.3s ease;
-}
-
-#nuevoDiv:hover {
-    transform: scale(1.02);
+    color: black;
+    height:fit-content;
+    background-color: #e7e7e7e0;
+    border-radius: 15px;
 }
 
 #nuevoDiv img {
     width: 40%;
     height: 100%;
-    object-fit: cover;
+    max-height: 400px;
+    object-fit: contain;
 }
 
 #nuevoDiv .texto {
     width: 60%;
     padding-left: 20px;
     transition: none;
+}
+
+#nuevoDiv:hover {
+    transform: scale(1.02);
+}
+
+.link-container {
+    text-decoration: none;
+    display: block;
+}
+
+main > a, div {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+#imgpuerta {
+    max-height: 500px !important;
 }

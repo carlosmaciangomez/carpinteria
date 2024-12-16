@@ -24,14 +24,17 @@
     </header>
 
     <nav>
+        <a href="/index.html">Inicio</a>
         <a href="./resenas.html">Reseñas</a>
         <a href="./mensaje.html">Envíanos un mensaje</a>
-        <a href="./index.html">Nuestros productos</a>
+        <a href="./productos.html">Nuestros productos</a>
         <a href="./presupuesto.html">Crea tu presupuesto</a>
-        <a href="./index.html">Pide tu cita previa</a>
-        <a href="./index.html">
-            <img src="./img/user-interface.png" alt="LogoPerfil" title="Cuenta">
+        <!--<a href="./index.html">Pide tu cita previa</a>-->
+        <a href="/perfil.html">
+            <img src="./img/user-interface.png" alt="LogoPerfil" title="Mi perfil">
+            <span id="nombreUsuarioNav"></span>
         </a>
+        <a id="logoutB" class="logout-button">Cerrar sesión</a>
     </nav>
 
     <main>
@@ -99,6 +102,8 @@
         </div>
     </footer>
     <script src="./js/newResena.js"></script>
+    <script src="./js/logout.js"></script>
+    <script src="./js/cookies3.js"></script>
 </body>
 
 </html>
