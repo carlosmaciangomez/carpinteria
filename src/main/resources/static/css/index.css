@@ -83,7 +83,7 @@ main > article > div p {
 }
 
 main > article > div:first-of-type {
-    background-color: #e7e7e7e0;
+    background-color: #e7e7e7;
     border-radius: 15px;
 }
 
@@ -193,7 +193,34 @@ main > article > div:nth-of-type(2) article {
     object-fit: contain;
 }
 
-/**/
+.tamano {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+#donde {
+    display: flex;
+    width: 77%;
+    margin: 50px auto;
+    border-radius: 10px;
+    background-color: #6c4d3e;
+    justify-content: space-around;
+    padding: 20px;
+    box-sizing: border-box;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    color: black;
+    height:fit-content;
+    border-radius: 15px;
+    text-align: justify;
+}
+
+#ubiLink {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
 
 #nuevoDiv {
     display: flex;
@@ -206,7 +233,7 @@ main > article > div:nth-of-type(2) article {
     transition: transform 0.3s ease;
     color: black;
     height:fit-content;
-    background-color: #e7e7e7e0;
+    background-color: #e7e7e7;
     border-radius: 15px;
 }
 
