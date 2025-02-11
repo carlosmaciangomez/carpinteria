@@ -40,12 +40,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (rolUsuario === 'A') {
                     window.location.href = 'administracion.html';
                 } else if (rolUsuario === 'C') {
-                    window.location.href = 'resenas.html';
-                } else if (rolUsuario === 'O') {
+                    window.location.href = 'index.html';
+                } else if (rolUsuario === 'A') {
                     window.location.href = 'index.html';
                 }
             } else {
-                const errorData = await response.json().catch(() => ({})); // Maneja respuesta vacía
+                const errorData = await response.json().catch(() => ({}));
                 const errorMessage = errorData.message || 'Error en la autenticación. Por favor, revisa tus credenciales.';
                 errorMessageElement.textContent = errorMessage;
                 errorMessageElement.style.display = 'block';

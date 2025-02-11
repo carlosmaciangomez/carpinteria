@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
             fechaField.setText(formattedDate);
 
 
-            const muebleNombreField = form.getTextField("nombreMueble"); //Campo del pdf editado
+            const muebleNombreField = form.getTextField("nombreMueble");
             muebleNombreField.setText(nombreMueble);
             muebleNombreField.setFontSize(10);
 
@@ -60,7 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
             muebleUnidadesField.setText(muebleUnidades);
             muebleUnidadesField.setFontSize(10);
 
-            form.flatten();  //Evita que se puedan editar los campos del PDF
+            //Evita que se puedan editar los campos del PDF
+            form.flatten();
 
             //Guardar el PDF modificado
             const pdfBytesOutput = await pdfDoc.save();
