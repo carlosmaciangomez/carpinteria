@@ -127,7 +127,7 @@ footer div {
 
 .logout-button {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 6px 14px;
     background-color: #ff4d4d;
     color: white;
     text-decoration: none;
@@ -135,6 +135,7 @@ footer div {
     transition: background-color 0.3s, transform 0.2s;
     font-weight: bold;
     cursor: pointer;
+    font-size: 18px;
 }
 
 .logout-button:hover {
@@ -144,14 +145,14 @@ footer div {
 
 #goBack {
     margin-left: auto;
-    padding: 10px 20px;
+    padding: 6px 14px;
     background-color: #4099ff;
     color: white;
     text-decoration: none;
     border: none;
     border-radius: 5px;
     transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
-    font-size: 25px;
+    font-size: 18px;
     font-weight: bold;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
