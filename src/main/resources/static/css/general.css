@@ -27,14 +27,20 @@ header h1, header h3 {
     position: absolute;
     right: 0;
     margin-right: 70px;
+
+    color: white;
+    text-shadow: 2px 2px 4px black;
 }
 
 header h1 {
     top: 23px;
+    font-size: 28px;
+    font-weight: bold;
 }
 
 header h3 {
     top: 68px;
+    font-size: 18px;
 }
 
 nav {
