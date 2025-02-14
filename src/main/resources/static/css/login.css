@@ -1,42 +1,180 @@
-main {
-    max-width: 400px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #E7E7E7;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 9px;
-}
-form div {
-    margin-bottom: 15px;
-}
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-main form div input {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-}
-main form h2 {
-    font-size: 33px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-button {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-button:hover {
-    background-color: #555;
-    transform: scale(1.1);
+@media (min-width: 1501px) {
+    main {
+        max-width: 400px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #E7E7E7;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 9px;
+    }
+
+    form div {
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    main form div input {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+    }
+
+    main form h2 {
+        font-size: 33px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    button {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #555;
+        transform: scale(1.1);
+    }
+
+    footer {
+        bottom: 0;
+    }
 }
 
-footer {
-    bottom: 0;
+@media (min-width: 1240px) and (max-width: 1500px) {
+    .menu-button {
+        font-size: 30px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .ocultar {
+        display: flex;
+    }
+}
+
+@media (max-width: 1240px) {
+    .ocultar {
+        display: flex;
+    }
+
+    nav {
+        display: block;
+    }
+}
+
+@media (max-width: 700px) {
+    .ocultar {
+        display: none;
+    }
+}
+
+
+@media (max-width: 500px) {
+    * {
+        margin: 0;
+        box-sizing: border-box;
+        object-fit: cover;
+        font-family: "Lexend", sans-serif;
+    }
+
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    nav {
+        display: block;
+    }
+
+    .ocultar {
+        display: none;
+    }
+
+    main {
+        max-width: 400px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #E7E7E7;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 9px;
+    }
+
+    form div {
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    main form div input {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+    }
+
+    main form h2 {
+        font-size: 33px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    #goLog {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    #goLog:hover {
+        background-color: #555;
+        transform: scale(1.1);
+    }
+
+    footer {
+        bottom: 0;
+    }
 }
