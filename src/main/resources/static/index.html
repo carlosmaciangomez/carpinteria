@@ -21,16 +21,17 @@
     </header>
 
     <nav>
-        <a href="./resenas.html">Reseñas</a>
-        <a href="./mensaje.html">Envíanos un mensaje</a>
-        <a href="./productos.html">Nuestros productos</a>
-        <a href="./presupuesto.html">Crea tu presupuesto</a>
+        <button type="button" id="menuButton" class="menu-button">&#9776;</button>
+        <a href="./resenas.html" class="ocultar">Reseñas</a>
+        <a href="./mensaje.html" class="ocultar">Envíanos un mensaje</a>
+        <a href="./productos.html" class="ocultar">Nuestros productos</a>
+        <a href="./presupuesto.html" class="ocultar">Crea tu presupuesto</a>
         <!--<a href="./index.html">Pide tu cita previa</a>-->
-        <a href="/perfil.html">
-            <img src="./img/user-interface.png" alt="LogoPerfil" title="Mi perfil">
+        <a>
+            <img src="./img/user-interface.png" alt="LogoPerfil" id="profileImage" title="Mi perfil">
             <span id="nombreUsuarioNav"></span>
+            <button id="logoutB" class="logout-button">Cerrar sesión</button>
         </a>
-        <a id="logoutB" class="logout-button">Cerrar sesión</a>
     </nav>
 
     <main>
@@ -93,26 +94,25 @@
             </div>
         </article>
 
-
-
         <div id="donde">
-            <div>
+            <div class="textoAumentado">
                 <h2 class="tamano">¿Dónde nos encontramos?</h2>
-                <p>Nos puedes encontrar en <a id="ubiLink" href="https://maps.app.goo.gl/gDziffxtS3BqHwYp8" target="_blank">Avenida Fray Luis Amigo, 18, 12400 Segorbe, Castellón, España</a>, junto a la
+                <p>Nos puedes encontrar en <a id="ubiLink" href="https://maps.app.goo.gl/gDziffxtS3BqHwYp8"
+                        target="_blank">Avenida Fray Luis Amigo, 18, 12400 Segorbe, Castellón, España</a>, junto a la
                     gestoría Viala. Nuestra carpintería está ubicada en una zona de fácil acceso, con aparcamiento
                     disponible en las cercanías. Ven a visitarnos sin compromiso y descubre la calidad de nuestros
                     trabajos dándote un paseo por la exposición de la tienda.</p>
             </div>
             <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1080.2534062594464!2d-0.48959330675429497!3d39.848042159911685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd607b029466c465%3A0xe54f5e7d208b8aee!2sMaci%C3%A1n%20Carpinteria!5e1!3m2!1ses!2ses!4v1739302108427!5m2!1ses!2ses"
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3633.5197950060942!2d-0.48900299999999997!3d39.848138!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd607b029466c465%3A0xe54f5e7d208b8aee!2sMaci%C3%A1n%20Carpinteria!5e1!3m2!1ses!2ses!4v1739489254204!5m2!1ses!2ses"
+                width="600" height="440" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
 
 
         <a href="productos.html?categoria=M" class="link-container" title="Ver productos similares">
             <div id="nuevoDiv">
-                <img src="./img/escritorio1.png" alt="Miniatura" title="Ver productos similares">
+                <img src="./img/escritorio1.png" class="fotoLink" alt="Miniatura" title="Ver productos similares">
                 <div class="texto">
                     <h3>Diseño de muebles a medida</h3>
                     <p>Transformamos tus ideas en muebles únicos, adaptados a cualquier espacio. Desde diseños modernos
@@ -131,14 +131,14 @@
                         espacio. Usamos solo materiales de alta calidad para garantizar una cocina duradera, funcional y
                         estética.</p>
                 </div>
-                <img src="./img/cocina4.png" alt="Miniatura" id="imgcocina">
+                <img src="./img/cocina4.png" class="fotoLink" alt="Miniatura" id="imgcocina">
             </div>
         </a>
 
 
         <a href="productos.html?categoria=P" class="link-container" title="Ver productos similares">
             <div id="nuevoDiv">
-                <img src="./img/puerta2.png" alt="Miniatura" id="imgpuerta" title="Ver productos similares">
+                <img src="./img/puerta2.png" class="fotoLink" alt="Miniatura" id="imgpuerta" title="Ver productos similares">
                 <div class="texto">
                     <h3>Creación de puertas personalizadas</h3>
                     <p>Diseñamos y fabricamos puertas únicas que se ajustan a tus requerimientos y estilo. Usamos
@@ -158,7 +158,7 @@
                         necesidades, estamos listos para hacerlo realidad. Calidad y precisión en cada faena, desde
                         pequeñas reparaciones hasta proyectos más complejos.</p>
                 </div>
-                <img src="./img/piscina2.png" alt="Miniatura" id="imgpiscina">
+                <img src="./img/piscina2.png" class="fotoLink" alt="Miniatura" id="imgpiscina">
             </div>
         </a>
     </main>
@@ -192,9 +192,9 @@
             <p>Macián Carpintería es una empresa registrada en España.</p>
         </div>
     </footer>
-    <!--<script src="./js/bloqC.js"></script>-->
     <script src="./js/logout.js"></script>
     <script src="./js/cookies1.js"></script>
+    <script src="./js/nav.js"></script>
 </body>
 
 </html>
